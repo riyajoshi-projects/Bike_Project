@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bike Price Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏍️ BikePredict
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#features">Features</a>
+
+            <a href="{{ url_for('form') }}" class="nav-button">
+                Predict Price
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                MACHINE LEARNING PROJECT
+            </div>
+
+            <h1>
+                Predict Your
+                <span>Bike's Price</span>
+            </h1>
+
+            <p>
+                Discover the estimated market value of your used bike
+                using machine learning based on its specifications.
+            </p>
+
+            <a href="{{ url_for('form') }}" class="predict-button">
+                Predict Bike Price
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="bike-circle">
+
+                <div class="circle-small"></div>
+
+                🏍️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏍️
+            </div>
+
+            <div>
+                <h2>7,306</h2>
+                <p>Bike Records</p>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+                <h2>₹25K+</h2>
+                <p>Price Range</p>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⚡
+            </div>
+
+            <div>
+                <h2>750</h2>
+                <p>Max Power</p>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🤖
+            </div>
+
+            <div>
+                <h2>ML</h2>
+                <p>Powered</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about" id="about">
+
+        <div class="about-text">
+
+            <div class="tag">
+                ABOUT THE PROJECT
+            </div>
+
+            <h2>
+                Smart Used Bike
+                Price Prediction
+            </h2>
+
+            <p>
+                This project uses machine learning to estimate the
+                price of a used bike. The model learns patterns from
+                thousands of bike records and uses important bike
+                features to make predictions.
+            </p>
+
+            <a href="{{ url_for('form') }}" class="outline-button">
+                Try Prediction →
+            </a>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-icon">
+                🤖
+            </div>
+
+            <h3>
+                Random Forest
+            </h3>
+
+            <p>
+                Machine Learning Regression Model
+            </p>
+
+            <div class="line"></div>
+
+            <div class="model-info">
+
+                <span>
+                    Dataset
+                </span>
+
+                <strong>
+                    7,306 Records
+                </strong>
+
+            </div>
+
+            <div class="model-info">
+
+                <span>
+                    Target
+                </span>
+
+                <strong>
+                    Bike Price
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <div class="section-heading">
+
+            <div class="tag">
+                PREDICTION FEATURES
+            </div>
+
+            <h2>
+                What Does The Model Consider?
+            </h2>
+
+            <p>
+                The prediction is based on important characteristics
+                of a used bike.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🛣️
+                </div>
+
+                <h3>
+                    Kilometers Driven
+                </h3>
+
+                <p>
+                    Total distance travelled by the bike.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    👤
+                </div>
+
+                <h3>
+                    Owner
+                </h3>
+
+                <p>
+                    Number of previous owners of the bike.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Bike Age
+                </h3>
+
+                <p>
+                    Age of the bike in years.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Power
+                </h3>
+
+                <p>
+                    Engine power of the bike.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🏷️
+                </div>
+
+                <h3>
+                    Brand
+                </h3>
+
+                <p>
+                    Brand information of the bike.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Price
+                </h3>
+
+                <p>
+                    The model predicts the estimated bike price.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+
+        <div class="section-heading">
+
+            <div class="tag">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                Simple Three Step Process
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Enter Details
+                </h3>
+
+                <p>
+                    Provide your bike's specifications.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    ML Prediction
+                </h3>
+
+                <p>
+                    The Random Forest model processes the data.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Get Price
+                </h3>
+
+                <p>
+                    View the estimated market price.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta">
+
+        <div>
+
+            <h2>
+                Ready to know your bike's value?
+            </h2>
+
+            <p>
+                Enter your bike details and get an estimated price.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('form') }}">
+            Start Prediction →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🏍️ BikePredict
+        </div>
+
+        <p>
+            Machine Learning Based Used Bike Price Prediction System
+        </p>
+
+        <div class="footer-line"></div>
+
+        <span>
+            © 2026 BikePredict | Machine Learning Project
+        </span>
+
+    </footer>
+
+</body>
+
+</html>

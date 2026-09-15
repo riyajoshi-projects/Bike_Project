@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bike Price Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='form.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏍️ BikePredict
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-btn">
+        ← Back to Home
+    </a>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+
+
+    <!-- HEADING -->
+
+    <div class="heading">
+
+        <div class="tag">
+            BIKE PRICE PREDICTION
+        </div>
+
+        <h1>
+            Find Your Bike's Estimated Price
+        </h1>
+
+        <p>
+            Enter your bike details below to get an estimated
+            market price using machine learning.
+        </p>
+
+    </div>
+
+
+    <!-- FORM CARD -->
+
+    <div class="form-card">
+
+        <form action="/predict" method="POST">
+
+
+            <!-- ROW 1 -->
+
+            <div class="form-row">
+
+                <div class="input-box">
+
+                    <label for="kms_driven">
+                        Kilometers Driven
+                    </label>
+
+                    <div class="input-field">
+
+                        <input
+                            type="number"
+                            id="kms_driven"
+                            name="kms_driven"
+                            step="any"
+                            placeholder="e.g. 15000"
+                            required
+                        >
+
+                        <span>KM</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="owner">
+                        Owner
+                    </label>
+
+                    <select
+                        id="owner"
+                        name="owner"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Select owner
+                        </option>
+
+                        <option value="1">
+                            1st owner
+                        </option>
+
+                        <option value="2">
+                            2nd owner
+                        </option>
+
+                        <option value="3">
+                            3rd owner
+                        </option>
+
+                        <option value="4">
+                            4th owner
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROW 2 -->
+
+            <div class="form-row">
+
+                <div class="input-box">
+
+                    <label for="age">
+                        Bike Age
+                    </label>
+
+                    <div class="input-field">
+
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            step="any"
+                            placeholder="e.g. 4"
+                            required
+                        >
+
+                        <span>Years</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="power">
+                        Engine Power
+                    </label>
+
+                    <div class="input-field">
+
+                        <input
+                            type="number"
+                            id="power"
+                            name="power"
+                            step="any"
+                            placeholder="e.g. 150"
+                            required
+                        >
+
+                        <span>BHP</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BRAND -->
+
+            <div class="input-box full">
+
+                <label for="brand">
+                    Bike Brand
+                </label>
+
+                <select
+                    id="brand"
+                    name="brand"
+                    required
+                >
+
+                    <option value="" disabled selected>
+                        Select bike brand
+                    </option>
+
+                    <option value="1">TVS</option>
+                    <option value="2">Royal Enfield</option>
+                    <option value="3">Triumph</option>
+                    <option value="4">Yamaha</option>
+                    <option value="5">Honda</option>
+                    <option value="6">Hero</option>
+                    <option value="7">Bajaj</option>
+                    <option value="8">Suzuki</option>
+                    <option value="9">Benelli</option>
+                    <option value="10">KTM</option>
+                    <option value="11">Mahindra</option>
+                    <option value="12">Kawasaki</option>
+                    <option value="13">Ducati</option>
+                    <option value="14">Hyosung</option>
+                    <option value="15">Harley-Davidson</option>
+                    <option value="16">Jawa</option>
+                    <option value="17">BMW</option>
+                    <option value="18">Indian</option>
+                    <option value="19">Rajdoot</option>
+                    <option value="20">LML</option>
+                    <option value="21">Yezdi</option>
+                    <option value="22">MV</option>
+                    <option value="23">Ideal</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button type="submit" class="predict-btn">
+
+                <span>Predict Bike Price</span>
+
+                <span>→</span>
+
+            </button>
+
+
+        </form>
+
+
+        <!-- RESULT -->
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <div class="result-title">
+                PREDICTED PRICE
+            </div>
+
+            <div class="price">
+                ₹{{ prediction }}
+            </div>
+
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        🏍️ BikePredict
+    </div>
+
+    <p>
+        Machine Learning Based Bike Price Prediction System
+    </p>
+
+</footer>
+
+
+</body>
+</html>
